@@ -1,4 +1,4 @@
-
+**/staticfiles/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -166,6 +166,8 @@ cython_debug/
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+
+//vscode/*
 
 # Local History for Visual Studio Code
 .history/
