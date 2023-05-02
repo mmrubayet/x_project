@@ -1,0 +1,13 @@
+<!-- templates/posts/list.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>All Posts</h1>
+<ul>
+  {% for post in post_list %}
+  <li>{{ post.text }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
