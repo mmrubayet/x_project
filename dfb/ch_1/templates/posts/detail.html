@@ -8,4 +8,5 @@
     <p>{{ post.body }}</p>
 </div>
 
+<a href="{% url 'post_update' post.pk %}">+ Edit Blog Post</a>
 {% endblock content %}
