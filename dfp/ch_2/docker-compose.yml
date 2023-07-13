@@ -9,6 +9,9 @@ services:
             - .:/dfp/ch_2
         depends_on:
             - db
+        environment:
+            - "DJANGO_SECRET_KEY=django-insecure-&pe2^m6b0(pf1njj$$l0s5^_sz9w(dc(o$$e5a&u9)+1!1h9$$edq"
+            - "DJANGO_DEBUG=True"
     db:
         image: postgres:13
         volumes:
