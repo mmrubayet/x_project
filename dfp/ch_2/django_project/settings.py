@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
-from pathlib import Path
 from environs import Env
 
 env = Env()
@@ -30,7 +28,9 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG")
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS_EXTRA = env("ALLOWED_HOSTS_EXTRA", default="")
+
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ALLOWED_HOSTS_EXTRA]
 
 # Application definition
 
@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     "django.contrib.sites",
 
     # project apps
-    'pages.apps.PagesConfig',
     'accounts.apps.AccountsConfig',
+    'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
 
     # third-party apps
     "crispy_forms",
